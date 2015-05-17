@@ -148,7 +148,7 @@
 
 		g_conn = net.createConnection(23, 'ptt.cc');
 		
-		g_conn.setTimeout(2000);
+		g_conn.setTimeout(1000);
 	
 		g_commandsObj.callbacks.push((callback ? callback : function(){}));	
 	
