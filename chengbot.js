@@ -28,10 +28,10 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 	});
 	
 	/*	從編號54635的文章開始收集	*/
-	_indexForArticle = 55587; //global
+	_indexForArticle = 56225; //global
 	
 	/*	往後收集5篇文章	*/
-	for( var _=0;_<1000;_++ ){
+	for( var _=0;_<350;_++ ){
 		
 		/*	先進入文章中	*/
 		myBot.toArticle(_+_indexForArticle,function(){ 
@@ -66,14 +66,14 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 				}else{
 					article_tag.isReply = false;
 				}
-				article_tag.commentGoodNum = S(article_data).count("[1;37m推");
-				article_tag.commentBadNum = S(article_data).count("[1;31m噓");
-				article_tag.commentNeutralNum = S(article_data).count("[1;31m→");				
-				if( article_tag.commentGoodNum+article_tag.commentBadNum+article_tag.commentNeutralNum >100 )
+				article_tag.numGoodComment = S(article_data).count("[1;37m推");
+				article_tag.numBadComment = S(article_data).count("[1;31m噓");
+				article_tag.numNeutralComment = S(article_data).count("[1;31m→");				
+				if( article_tag.numGoodComment+article_tag.numBadComment+article_tag.numNeutralComment >100 )
 					article_tag.isPopular = true;
 				else
 					article_tag.isPopular = false;			
-				if( article_tag.commentGoodNum>50 )
+				if( article_tag.numGoodComment>50 )
 					article_tag.isGoodArticle = true;
 				else
 					article_tag.isGoodArticle = false;
