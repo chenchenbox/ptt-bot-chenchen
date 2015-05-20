@@ -1,9 +1,12 @@
 node_modules
 package.json
+
 screen_data
 movie_data
+popular_article
 gossip_data
 screen
 test.js
 myID.txt
+myID2.txt
 chengrobot.js

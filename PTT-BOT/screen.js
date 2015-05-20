@@ -11,7 +11,7 @@ var S = require('string');
 
 /** Regular Expression && Pattern **/
 const AnsiCursorHome = /\[(\d+)*;*(\d+)*H/g;
-const nullScreen = '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n';
+const nullScreen = "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n";
 
 
 
@@ -98,16 +98,16 @@ function parseNewdata(g_cursor,newdataStr){
 			
 			else{//in non-ANSI state
 				switch(ch){
-					case '':
+					case "":
 						Ansi.str = ch;
 						Ansi.state = true;
 						break;
 				
-					case '\r': //carriage return: return to the col 1
+					case "\r": //carriage return: return to the col 1
 						g_cursor.col = 1;
 						break;
 						
-					case '\n': //line feed: move to next row
+					case "\n": //line feed: move to next row
 						g_cursor.row += 1;
 						//oldStr = ScreenRow[g_cursor.row];
 						break;
@@ -130,7 +130,7 @@ function parseNewdata(g_cursor,newdataStr){
 	var fullScreen = '';
 	
 	for(var _=0;_<ScreenRow.length;_++){
-		fullScreen += ScreenRow[_] + '\r\n';
+		fullScreen += ScreenRow[_] + "\r\n";
 	}
 	
 	return fullScreen;

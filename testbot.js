@@ -3,8 +3,17 @@ var fs = require('fs');
 var iconv = require('iconv-lite'); 
 var S = require('string');
 
+
+
+//取得今天日期
+var dateObj = new Date();
+var thisMonth = dateObj.getMonth()+1;
+var thisDate = dateObj.getDate();
+var today = thisMonth.toString()+'/'+thisDate.toString();
+
+
 //login
-fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
+fs.readFile('myID2.txt',{encoding:'utf-8'}, function (err, data) {
 	
 	if (err) throw err;
 	id = S(data).between("ID:'","'").s;
@@ -17,40 +26,156 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 		
 		/*	登入完後即停留在主功能表 */	
 		console.log('已進入主功能表');
-	
+		
 	});
+	
+	
+	var targetArticleNum = [];
+	
 	
 	/*	進入欲收集的電影版版中	*/
 	myBot.toBoard('movie',function(){
 		
 		console.log('已進入movie板，接著收集文章!');
 		
+		console.log(myBot.escapeANSI(myBot.getScreen()));
+		var screenData = S(myBot.getScreen()).replaceAll('●','  ').s;	
+		var screenArr =  S(myBot.escapeANSI(screenData)).lines();
+		console.dir(screenArr);	
+		console.log(S(screenArr[5]).right(-7).right(5).s);
+		console.log(S(screenArr[5]).right(-16).right(4).s);
+		
+		for(var _ =0; _<screenArr.length;_++){
+			
+			var articleNum = S(screenArr[_]).right(-7).right(5).s 
+			var articleDate = S(screenArr[_]).right(-16).right(4).s
+			if( articleDate == today){
+				targetArticleNum.push(articleNum);
+			}
+			
+		}
+		
+		console.log(targetArticleNum);
+		console.log(targetArticleNum.length);
+		fs.writeFile('./movie_data/board_list.txt',iconv.encode( JSON.stringify(myBot.escapeANSI(myBot.getScreen())) ,'big5' ), function (err) {
+			if (err) throw err;
+		});
+		
 	});
 	
-	/*	從編號54635的文章開始收集	*/
+	myBot.sendPageUp(function(){
+		
+		var screenData = S(myBot.getScreen()).replaceAll('●','  ').s;
+		var screenArr =  S(myBot.escapeANSI(screenData)).lines();
+		console.dir(screenArr);
+		console.log(S(screenArr[5]).right(-7).right(5).s);
+		console.log(S(screenArr[5]).right(-16).right(4).s);
+		
+		for(var _ =0; _<screenArr.length;_++){
+			
+			var articleNum = S(screenArr[_]).right(-7).right(5).s 
+			var articleDate = S(screenArr[_]).right(-16).right(4).s
+			if( articleDate == today){
+				targetArticleNum.push(articleNum);
+			}
+			
+		}
+		
+		console.log(targetArticleNum);
+		console.log(targetArticleNum.length);
+	});
+	
+	myBot.sendPageUp(function(){
+		
+		var screenData = S(myBot.getScreen()).replaceAll('●','  ').s;
+		var screenArr =  S(myBot.escapeANSI(screenData)).lines();
+		console.dir(screenArr);
+		console.log(S(screenArr[5]).right(-7).right(5).s);
+		console.log(S(screenArr[5]).right(-16).right(4).s);
+		
+		for(var _ =0; _<screenArr.length;_++){
+			
+			var articleNum = S(screenArr[_]).right(-7).right(5).s 
+			var articleDate = S(screenArr[_]).right(-16).right(4).s
+			if( articleDate == today){
+				targetArticleNum.push(articleNum);
+			}
+			
+		}
+		
+		console.log(targetArticleNum);
+		console.log(targetArticleNum.length);
+	});
+	
+	myBot.sendPageUp(function(){
+		
+		var screenData = S(myBot.getScreen()).replaceAll('●','  ').s;
+		var screenArr =  S(myBot.escapeANSI(screenData)).lines();
+		console.dir(screenArr);
+		console.log(S(screenArr[5]).right(-7).right(5).s);
+		console.log(S(screenArr[5]).right(-16).right(4).s);
+		
+		for(var _ =0; _<screenArr.length;_++){
+			
+			var articleNum = S(screenArr[_]).right(-7).right(5).s 
+			var articleDate = S(screenArr[_]).right(-16).right(4).s
+			if( articleDate == today){
+				targetArticleNum.push(articleNum);
+			}
+			
+		}
+		
+		console.log(targetArticleNum);
+		console.log(targetArticleNum.length);
+	});
+	
+	myBot.sendPageUp(function(){
+		
+		var screenData = S(myBot.getScreen()).replaceAll('●','  ').s;
+		var screenArr =  S(myBot.escapeANSI(screenData)).lines();
+		console.dir(screenArr);
+		console.log(S(screenArr[5]).right(-7).right(5).s);
+		console.log(S(screenArr[5]).right(-16).right(4).s);
+		
+		for(var _ =0; _<screenArr.length;_++){
+			
+			var articleNum = S(screenArr[_]).right(-7).right(5).s 
+			var articleDate = S(screenArr[_]).right(-16).right(4).s
+			if( articleDate == today){
+				targetArticleNum.push(articleNum);
+			}
+			
+		}
+		
+		console.log(targetArticleNum);
+		console.log(targetArticleNum.length);
+	});
+	
+	/**
+	//	從編號54635的文章開始收集	
 	_indexForArticle = 54635; //global
 	
-	/*	往後收集5篇文章	*/
+	//	往後收集5篇文章	
 	for( var _=0;_<1000;_++ ){
 		
-		/*	先進入文章中	*/
+		//	先進入文章中	
 		myBot.toArticle(_+_indexForArticle,function(){ 
 			
 			console.log('進入'+_indexForArticle+'文章中');
 			
 		});
 	
-		/*	接著下載文章	*/
+		//	接著下載文章	
 		myBot.loadArticle(function(){
 		
 			var article_data = myBot.getArticle() ;
 			
-			/*	從getArticle()取得文章內容	*/
+			//	從getArticle()取得文章內容	
 			fs.writeFile('./movie_data/'+'movie'+_indexForArticle+'.txt',iconv.encode( article_data ,'big5' ), function (err) {
 				
 				if (err) throw err;
 				
-				/*	替Article新增標籤資料	*/
+				//	替Article新增標籤資料	
 				var article_tag = {};
 				article_tag.index = _indexForArticle;
 				article_tag.title =  S(article_data).between('[34;47m 標題 [0;44m',"\r\n").trim().replaceAll(" ","").s;
@@ -79,7 +204,7 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 					article_tag.isGoodArticle = false;
 				
 				
-				/*	Console Tag 結果	*/
+				//	Console Tag 結果	
 				if( article_tag.isGoodArticle )
 					console.log("[1;32m"+JSON.stringify(article_tag)+"[m");
 				else
@@ -87,7 +212,7 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 				if( article_tag.isPopular )
 					console.log("[1;31m此篇為熱門文章!![m");
 				
-				/*	寫入Tag	*/
+				//	寫入Tag	
 				fs.writeFile('./movie_data/'+'movie'+_indexForArticle+'_tag.txt',iconv.encode( JSON.stringify(article_tag) ,'big5' ), function (err) {
 					if (err) throw err;
 				});
@@ -100,7 +225,7 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 		});
 		
 	}
-	
+	**/
 	
 
 });

@@ -28,10 +28,10 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 	});
 	
 	/*	從編號54635的文章開始收集	*/
-	_indexForArticle = 54635; //global
+	_indexForArticle = 56332; //global
 	
 	/*	往後收集5篇文章	*/
-	for( var _=0;_<1000;_++ ){
+	for( var _=0;_<500;_++ ){
 		
 		/*	先進入文章中	*/
 		myBot.toArticle(_+_indexForArticle,function(){ 
@@ -80,12 +80,21 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 				
 				
 				/*	Console Tag 結果	*/
-				if( article_tag.isGoodArticle )
+				if( article_tag.isGoodArticle ){
 					console.log("[1;32m"+JSON.stringify(article_tag)+"[m");
+					/*	寫入Tag	*/
+					fs.writeFile('./popular_article/'+'movie'+_indexForArticle+'.txt',iconv.encode( article_data ,'big5' ), function (err) {
+						if (err) throw err;
+					});
+				}
 				else
 					console.log("[1;33m"+JSON.stringify(article_tag)+"[m");
-				if( article_tag.isPopular )
+				if( article_tag.isPopular ){
 					console.log("[1;31m此篇為熱門文章!![m");
+					fs.writeFile('./popular_article/'+'movie'+_indexForArticle+'.txt',iconv.encode( article_data ,'big5' ), function (err) {
+					if (err) throw err;
+					});
+				}
 				
 				/*	寫入Tag	*/
 				fs.writeFile('./movie_data/'+'movie'+_indexForArticle+'_tag.txt',iconv.encode( JSON.stringify(article_tag) ,'big5' ), function (err) {
