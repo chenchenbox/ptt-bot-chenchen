@@ -2,6 +2,7 @@ node_modules
 package.json
 screen_data
 movie_data
+gossip_data
 screen
 test.js
 myID.txt
