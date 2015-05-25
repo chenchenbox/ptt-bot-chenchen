@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.center {
+    text-align: center;
+}
+
+.btn-big {
+    font-size: 16px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+div.over18-notice {
+    padding-top: 20px;
+    margin-left: 150px;
+}
+
+img.over18-notice {
+    float: left;
+}
+
+.clear {
+    clear: both
+}

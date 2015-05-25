@@ -28,10 +28,10 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 	});
 	
 	/*	從編號54635的文章開始收集	*/
-	_indexForArticle = 56332; //global
+	_indexForArticle = 56754; //global
 	
 	/*	往後收集5篇文章	*/
-	for( var _=0;_<500;_++ ){
+	for( var _=0;_<200;_++ ){
 		
 		/*	先進入文章中	*/
 		myBot.toArticle(_+_indexForArticle,function(){ 

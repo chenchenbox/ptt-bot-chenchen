@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://www.ptt.cc/bbs/Soft_Job/M.1388674793.A.B82.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		
+
+<meta name="viewport" content="width=device-width">
+
+<title>[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊</title>
+<meta name="robots" content="all">
+<meta name="keywords" content="Ptt BBS 批踢踢">
+<meta name="description" content="
+
+原本以為說telnet抓取資料是很簡單的事情
+
+畢竟寫過telnet瀏覽器 自己去剖析控制碼
+">
+<meta property="og:site_name" content="Ptt 批踢踢實業坊">
+<meta property="og:title" content="[閒聊] telnet 抓取資料">
+<meta property="og:description" content="
+
+原本以為說telnet抓取資料是很簡單的事情
+
+畢竟寫過telnet瀏覽器 自己去剖析控制碼
+">
+
+<link rel="stylesheet" type="text/css" href="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/bbs-common.css">
+<link rel="stylesheet" type="text/css" href="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/bbs.css" media="screen">
+<link rel="stylesheet" type="text/css" href="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/pushstream.css" media="screen">
+<link rel="stylesheet" type="text/css" href="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/bbs-print.css" media="print">
+
+
+<script src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/cb=gapi.loaded_1" async=""></script><script src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/plusone.js" gapi_processed="true"></script><script id="facebook-jssdk" src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/all.js"></script><script type="text/javascript" async="" src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/ga.js"></script><script src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/jquery.min.js"></script>
+<script src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/bbs.js"></script>
+
+
+		
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32365737-1']);
+  _gaq.push(['_setDomainName', 'ptt.cc']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+	<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+    <body>
+		
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/QrU_tEEWym9.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="topbar-container">
+	<div id="topbar" class="bbs-content">
+		<a id="logo" href="https://www.ptt.cc/">批踢踢實業坊</a>
+		<span>›</span>
+		<a class="board" href="https://www.ptt.cc/bbs/Soft_Job/index.html"><span class="board-label">看板 </span>Soft_Job</a>
+		<a class="right small" href="https://www.ptt.cc/about.html">關於我們</a>
+		<a class="right small" href="https://www.ptt.cc/contact.html">聯絡資訊</a>
+	</div>
+</div>
+<div id="navigation-container">
+	<div id="navigation" class="bbs-content">
+		<a class="board" href="https://www.ptt.cc/bbs/Soft_Job/index.html">返回看板</a>
+		<div class="bar"></div>
+		<div class="share">
+			<span>分享</span>
+			<div class="fb-like fb_iframe_widget" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-href="http://www.ptt.cc/bbs/Soft_Job/M.1388674793.A.B82.html" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=90&amp;href=http%3A%2F%2Fwww.ptt.cc%2Fbbs%2FSoft_Job%2FM.1388674793.A.B82.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=90"><span style="vertical-align: bottom; width: 78px; height: 20px;"><iframe name="f243c98cd" width="90px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/like.html" style="border: none; visibility: visible; width: 78px; height: 20px;" class=""></iframe></span></div>
+
+			<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1432528294987" name="I0_1432528294987" src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+<script type="text/javascript">
+window.___gcfg = {lang: 'zh-TW'};
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+
+		</div>
+	</div>
+</div>
+<div id="main-container">
+    <div id="main-content" class="bbs-screen bbs-content"><div class="article-metaline"><span class="article-meta-tag">作者</span><span class="article-meta-value">erspicu (.)</span></div><div class="article-metaline-right"><span class="article-meta-tag">看板</span><span class="article-meta-value">Soft_Job</span></div><div class="article-metaline"><span class="article-meta-tag">標題</span><span class="article-meta-value">[閒聊] telnet 抓取資料</span></div><div class="article-metaline"><span class="article-meta-tag">時間</span><span class="article-meta-value">Thu Jan  2 22:59:50 2014</span></div>
+
+原本以為說telnet抓取資料是很簡單的事情
+
+畢竟寫過telnet瀏覽器 自己去剖析控制碼
+
+什麼控制碼會有什麼行為.顯示.出現位置等等等控制
+
+基本上是都實做過
+
+對telnet的動作和行為應該還算了解
+
+(但不算深入有些控制碼還沒完全搞懂,但因為瀏覽ptt大致都正常懶得細究)
+
+想說最近看到node-webkit 打算用js寫一個視窗軟體
+
+做類似下面這兩款的事情
+<a href="https://play.google.com/store/apps/details?id=com.bbs.reader&hl=zh_TW" target="_blank" rel="nofollow">https://play.google.com/store/apps/details?id=com.bbs.reader&amp;hl=zh_TW</a>
+<a href="https://play.google.com/store/apps/details?id=mong.moptt&hl=zh_TW" target="_blank" rel="nofollow">https://play.google.com/store/apps/details?id=mong.moptt&amp;hl=zh_TW</a>
+
+學點新東西 練練功一下
+
+結果一開始就被node.js的非同步行為搞得很頭大 這中間有很多處理的問題還在摸索
+
+用了一些很不好硬幹的方式 總算是把我的最愛撈取出來 一撈取出來一看
+
+怎麼有些版名會掉字? 一考就下去才發現 原來上一頁中出現同樣的英文字母
+
+再下一頁中可能為了省資料傳送量 所以到下一頁的時候 不會再重傳
+
+好比說同樣的位置 我的最愛中有一個是Android
+下一頁我的最愛分頁是 ASM 結果因為那個 "A"字母在同一個地方有出現過
+只會送出 SM ( A沒送....) 結果我在PASER字串抓資料時 只抓到SM....
+
+意思是說如果要正確抓我的最愛 需要模擬出一個不須真正印出來的console畫面
+以畫面文字對應排列為基礎 去擷取資料
+有些時候不能用直接邊抓資料編paser資料的方式去抓
+
+然後怎麼抓資料 也不太有頭緒 目前是用類似有限狀態機的方式
+搭配在某些規則去剖析資料 但是感覺真的是不太好的方法
+
+總之不知道這邊有沒有人有相關經驗 知道比較有效率抓telnet資料的方式?
+
+能分享一些心得之類的  還以為很簡單.... 結果竟然是這麼麻煩的問題....
+
+
+--
+<span class="f2">※ 發信站: 批踢踢實業坊(ptt.cc)
+</span>◆ From: 61.70.105.149
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:可以去研究zterm的程式碼</span><span class="push-ipdatetime"> 01/02 23:14
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:其實還滿多的，不過要自己找來看</span><span class="push-ipdatetime"> 01/02 23:14
+</span></div>zterm是telnet瀏覽器喔...跟我要的把特定站台一些資料抓取下來的目的不太一樣
+<span class="f2">※ 編輯: erspicu         來自: 61.70.105.149        (01/02 23:17)
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">joyolkreg</span><span class="f3 push-content">:要javascript可以研究bbsfox-for-google-chrome</span><span class="push-ipdatetime"> 01/02 23:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">idleidle</span><span class="f3 push-content">:你該去找telnet SPEC來看。硬幹不會比較快..</span><span class="push-ipdatetime"> 01/02 23:20
+</span></div>以前就幹過了
+<a href="http://dl.dropboxusercontent.com/u/61164954/homepage/samplebbs/index.htm" target="_blank" rel="nofollow">http://dl.dropboxusercontent.com/u/61164954/homepage/samplebbs/index.htm</a>
+現在的重點不是如何寫TELNET瀏覽器 是如何把TELNET上的資料抓下來
+特別是用NODE.JS有許多非同步行為
+
+目前還在摸索比較好的方式 是上問看看有沒有人有相關經驗 參考一下做法
+<span class="f2">※ 編輯: erspicu         來自: 61.70.105.149        (01/02 23:25)
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">idleidle</span><span class="f3 push-content">:況且還有色碼跟位移碼，真的是蠻複雜的Q_Q...</span><span class="push-ipdatetime"> 01/02 23:22
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">xvid</span><span class="f3 push-content">:不去了解protocol你是要怎麼處理這些input.....</span><span class="push-ipdatetime"> 01/03 00:06
+</span></div>以前就寫過telnet瀏覽器 ptt瀏覽大概都正常 你覺得我不了解protocol??
+是控制碼很多 有些用不到 沒k得很完全而已
+<div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">leicheong</span><span class="f3 push-content">:就自設screen buffer, 把拿到的資料都在上面跑一篇.</span><span class="push-ipdatetime"> 01/03 00:06
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">leicheong</span><span class="f3 push-content">:然後要拿資料的時候, 直接到buffer抓.</span><span class="push-ipdatetime"> 01/03 00:07
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">leicheong</span><span class="f3 push-content">:顏色碼那些如果不影響你篩選資料的話, 取到的時候可以</span><span class="push-ipdatetime"> 01/03 00:08
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">leicheong</span><span class="f3 push-content">:discard掉.</span><span class="push-ipdatetime"> 01/03 00:08
+</span></div>感覺樓上應該是有實際處理經驗 我的感覺是 只能說抓TELNET資料
+真的沒比寫telnet瀏覽器簡單阿...很多處理的菱菱角角還在摸
+<span class="f2">※ 編輯: erspicu         來自: 61.70.105.149        (01/03 00:15)
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:呃telnet瀏覽器就有作parse的動作啊 那是現成的code</span><span class="push-ipdatetime"> 01/03 00:20
+</span></div>parse資料跟parse控制碼還滿不一樣的耶...
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:js的話，去看看bbsfox以及pcmanfx之類的js程式如何?</span><span class="push-ipdatetime"> 01/03 00:22
+</span></div><span class="f2">※ 編輯: erspicu         來自: 61.70.105.149        (01/03 00:57)
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">YahooTaiwan</span><span class="f3 push-content">:寫過ptt mobile app就知道parsing的苦</span><span class="push-ipdatetime"> 01/03 01:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:呃...原PO可能不知道複製有純文字和包含控制碼</span><span class="push-ipdatetime"> 01/03 07:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:一堆程式可以抄 只差在不想看而已吧囧</span><span class="push-ipdatetime"> 01/03 07:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:<a href="http://tinyurl.com/kbnwmzm" target="_blank" rel="nofollow">http://tinyurl.com/kbnwmzm</a> 這是你要的?</span><span class="push-ipdatetime"> 01/03 07:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:具體作法可能像是leicheong大所說 程式碼都有了</span><span class="push-ipdatetime"> 01/03 07:26
+</span></div>我很確定你對這問題的理解在狀況外  parsing控制碼 跟 parsing資料
+根本不一樣的事情 要parsing控制碼 靠我以前自己寫的TELNET瀏覽器
+<a href="https://github.com/erspicu/telnet_sample/blob/master/telnet_sample/telnet.cs" target="_blank" rel="nofollow">https://github.com/erspicu/telnet_sample/blob/master/telnet_sample/telnet.cs</a>
+就可以parsing 我幹嘛還要抄別人的?
+先搞清楚moptt跟bbsreader這類軟體跟telnet瀏覽器軟體的差異吧
+"具體作法可能像是leicheong大所說" &lt;-- 這句話,你真的懂什麼是leicheong大所說??
+而且他說的東西我上面是也大概有提到過
+<span class="f2">※ 編輯: erspicu         來自: 61.70.105.149        (01/03 08:42)
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">ettoolong</span><span class="f3 push-content">:pcmanfx的 下載文章 這個功能就差不多是你要的功能了.</span><span class="push-ipdatetime"> 01/03 09:08
+</span></div>恩 下載文章的處理方式 的確可以參考 但是隨著狀況不同 要擷取什麼資料
+似乎只能見機行事 case by case 只是這中間會想聽聽相關處理經驗的人心得分享
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">uranusjr</span><span class="f3 push-content">:手機 BBS 瀏覽器 (尤其 Android 的) 會遇到一模一樣的問</span><span class="push-ipdatetime"> 01/03 09:10
+</span></div>yes parsing控制碼 跟 parsing資料 本來就兩回事情 總算還有人知道我在說啥
+<div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">uranusjr</span><span class="f3 push-content">:題, 應該有一些開源專案可以參考</span><span class="push-ipdatetime"> 01/03 09:10
+</span></div><span class="f2">※ 編輯: erspicu         來自: 60.248.56.181        (01/03 09:42)
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CRPKT</span><span class="f3 push-content">:沒經驗, 就上述來看第一層 screen buffer 跑不掉</span><span class="push-ipdatetime"> 01/03 10:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CRPKT</span><span class="f3 push-content">:第二層 site map model 大概也跑不掉, 第三層抓資料策略</span><span class="push-ipdatetime"> 01/03 10:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CRPKT</span><span class="f3 push-content">:覺得 async 麻煩的話 future/promises pattern 會省很多事</span><span class="push-ipdatetime"> 01/03 10:39
+</span></div>大概方向 是這樣沒錯 只是實作細節跟程式規劃中間很多菱角 要想想
+還真佩服像是MOPTT和BBSREADER作者...原本覺得這種程式不會太複雜
+功真的不少...
+<span class="f2">※ 編輯: erspicu         來自: 60.248.56.181        (01/03 10:44)
+</span><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:其實你還是該去研究 zterm</span><span class="push-ipdatetime"> 01/03 13:18
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:你要做的東西我之前做過，你除了靠新加入的資料以外，還得靠</span><span class="push-ipdatetime"> 01/03 13:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:畫面的 buffer 去當成 full data 來 parse。</span><span class="push-ipdatetime"> 01/03 13:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:他不像 api 一樣會回給你完整的資料，你得不斷的刷新 buffer</span><span class="push-ipdatetime"> 01/03 13:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:再從 buffer 裡面解析出正確的資料。從這個角度去想。</span><span class="push-ipdatetime"> 01/03 13:19
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:該有的狀態大致上都有啦，像是你可以知道你現在在哪個版，</span><span class="push-ipdatetime"> 01/03 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:特別需要考慮的是像是進版畫面（存在或不存在）、文章內文</span><span class="push-ipdatetime"> 01/03 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:標題被修改或指令送出延遲等等之類的特殊情況。</span><span class="push-ipdatetime"> 01/03 13:21
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:然後就平常使用 ptt 會碰到的控制碼跟瀏覽器真正會碰到的控</span><span class="push-ipdatetime"> 01/03 13:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:製碼其實還有不少差距，但規則基本上都還算單純。</span><span class="push-ipdatetime"> 01/03 13:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:控制碼方面，比較討厭的就是雙色字之類的處理，對 encording</span><span class="push-ipdatetime"> 01/03 13:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:要熟。</span><span class="push-ipdatetime"> 01/03 13:22
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:推完才發現 leicheong 其實已經回的差不多了。XD</span><span class="push-ipdatetime"> 01/03 13:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:這個你玩過 telnet browser 的話，就是那樣啦，沒有魔術</span><span class="push-ipdatetime"> 01/03 13:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:因為 bbs server 會回傳什麼，真的完完全全就是看他高興...</span><span class="push-ipdatetime"> 01/03 13:24
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:我之前做的東西是偏向 bbs robot ，會自動下 query 跟發文</span><span class="push-ipdatetime"> 01/03 13:25
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:以前幫學校做的租屋網站做出自動發文到學校bbs租屋版的系統</span><span class="push-ipdatetime"> 01/03 13:26
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:這兩者需要的東西有認真做的話其實很像，資訊上也很像。</span><span class="push-ipdatetime"> 01/03 13:26
+</span></div>之前雖然是自己處理控制碼 但是是直接借用c#的console來當screen
+而現在等於是自己要處理和實作screen容器 來讀buffer 覺得很麻煩
+但是似乎是一定的必要步驟了 等於在擷取比對所要的內容
+使用的screen pattern來分析就是 ok...
+<span class="f2">※ 編輯: erspicu         來自: 60.248.56.181        (01/03 16:28)
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:雖說理解錯你的意思 但認真的說 pcmanfx的確有你要的功</span><span class="push-ipdatetime"> 01/03 18:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:能 研究是必要的吧 它也是用screen buffer概念</span><span class="push-ipdatetime"> 01/03 18:40
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:@typepeter 他的問題是要知道現在在哪個畫面，這個畫面有哪</span><span class="push-ipdatetime"> 01/03 19:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:些資料，pcmanfx 跟這有關聯的部份在哪你直接寫出來不就好了</span><span class="push-ipdatetime"> 01/03 19:27
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:@erispicu 我建議你第一版在做的時候先把顏色這個變數拿掉</span><span class="push-ipdatetime"> 01/03 19:30
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:等純粹抓資料能搞定之後再來煩惱顏色的控制碼，雙色字那個</span><span class="push-ipdatetime"> 01/03 19:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:問題我是覺得有點麻煩。</span><span class="push-ipdatetime"> 01/03 19:31
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">TonyQ</span><span class="f3 push-content">:反正要判斷控制碼只要看 (esc) m 這些 pattern 就能濾了</span><span class="push-ipdatetime"> 01/03 19:32
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:termbuf.js是buffer的實作 pcman會更新它的內容</span><span class="push-ipdatetime"> 01/03 19:44
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:類似的行為可以看pcman.js termbuf.js termsel.js</span><span class="push-ipdatetime"> 01/03 19:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:因為這三個都是關於對buffer進行更新/讀取的動作</span><span class="push-ipdatetime"> 01/03 19:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:我覺得應該是可以參考，然後自己刻一個buffer出來</span><span class="push-ipdatetime"> 01/03 19:46
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">typepeter</span><span class="f3 push-content">:因為PCMAN大大寫得還不錯 應該是很有參考價值啦</span><span class="push-ipdatetime"> 01/03 19:46
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">CRPKT</span><span class="f3 push-content">:這些看起來他已經會寫啦, 就只是都很麻煩吧 XD</span><span class="push-ipdatetime"> 01/03 22:34
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CRPKT</span><span class="f3 push-content">:async 的 API 開法最簡單就是所有需要 long operation</span><span class="push-ipdatetime"> 01/03 22:36
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">CRPKT</span><span class="f3 push-content">:的地方都 return promise 就差不多了</span><span class="push-ipdatetime"> 01/03 22:37
+</span></div><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">smallyuyuyu</span><span class="f3 push-content">:喔你們都在對牛彈琴阿</span><span class="push-ipdatetime"> 01/04 02:47
+</span></div>你還在狀況外嗎?
+<span class="f2">※ 編輯: erspicu         來自: 61.70.105.149        (01/04 10:51)
+</span><div class="push"><span class="hl push-tag">推 </span><span class="f3 hl push-userid">readonly</span><span class="f3 push-content">:這蠻困難的 也許資料有固定的 pattern...</span><span class="push-ipdatetime"> 01/04 23:38
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">readonly</span><span class="f3 push-content">:也許不用執著於protocol，遇到一個修一個，可能就好了</span><span class="push-ipdatetime"> 01/04 23:39
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">smallyuyuyu</span><span class="f3 push-content">:很少看到發文求解的講話這麼嗆耶</span><span class="push-ipdatetime"> 01/09 21:45
+</span></div><div class="push"><span class="f1 hl push-tag">→ </span><span class="f3 hl push-userid">smallyuyuyu</span><span class="f3 push-content">:人家一開始就回答你了 自己慧根不夠還嗆 頗呵</span><span class="push-ipdatetime"> 01/09 21:45
+</span></div>沒關係 你應該也看不太懂這討論串在說啥 狀況外
+其實如果你還沒有能力理解這篇的話 是可以選擇先沉默的
+也許先等你有辦法跟我一樣直接自己寫一個TELNET瀏覽器後
+你就會看懂這篇在問啥了
+<span class="f2">※ 編輯: erspicu         來自: 61.70.105.149        (01/14 23:41)
+</span></div>
+    
+    <div id="article-polling" data-pollurl="/poll/Soft_Job/M.1388674793.A.B82.html?cacheKey=2053-1671398409&amp;offset=10206&amp;offset-sig=3cd0d67842f2c435e652cb090bdcb63a0a71fd4e" data-longpollurl="/v1/longpoll?id=f4aefe4b71e3d2bb1bc3e9b3c1c323c819575b52" data-offset="10206">推文自動更新已關閉</div>
+    
+
+    
+</div>
+
+    
+
+<iframe name="oauth2relay391656825" id="oauth2relay391656825" src="./[閒聊] telnet 抓取資料 - 看板 Soft_Job - 批踢踢實業坊_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>
