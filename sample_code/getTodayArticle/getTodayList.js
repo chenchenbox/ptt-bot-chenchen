@@ -1,4 +1,4 @@
-var myBot = require('./PTT-BOT/ptt-bot');
+var myBot = require('../../PTT-BOT/ptt-bot');
 var fs = require('fs');
 var iconv = require('iconv-lite'); 
 var S = require('string');
@@ -9,11 +9,13 @@ var S = require('string');
 var dateObj = new Date();
 var thisMonth = dateObj.getMonth()+1;
 var thisDate = dateObj.getDate();
+if (thisDate<=9) thisDate = '0'+thisDate;
 var today = thisMonth.toString()+'/'+thisDate.toString();
 
 
+
 //login
-fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
+fs.readFile('../../myID.txt',{encoding:'utf-8'}, function (err, data) {
 	
 	if (err) throw err;
 	id = S(data).between("ID:'","'").s;
@@ -72,7 +74,7 @@ fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
 				//console.log(S(screenArr[5]).right(-16).right(4).s);
 		
 				for(var _ =0; _<screenArr.length;_++){
-			
+					
 					var articleIndex = S(screenArr[_]).right(-7).right(5).s 
 					var articleDate = S(screenArr[_]).right(-16).right(4).s
 					if( articleDate == today){

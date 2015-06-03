@@ -1,4 +1,4 @@
-var myBot = require('./PTT-BOT/ptt-bot');
+var myBot = require('../../PTT-BOT/ptt-bot');
 var fs = require('fs');
 var iconv = require('iconv-lite'); 
 var S = require('string');
@@ -12,7 +12,7 @@ fs.readFile('targetArticleList.txt',{encoding:'utf-8'}, function (err, data) {
 	//console.log( totalNum );
 	
 	//login
-	fs.readFile('myID.txt',{encoding:'utf-8'}, function (err, data) {
+	fs.readFile('../../myID.txt',{encoding:'utf-8'}, function (err, data) {
 	
 		if (err) throw err;
 		id = S(data).between("ID:'","'").s;
@@ -52,7 +52,7 @@ fs.readFile('targetArticleList.txt',{encoding:'utf-8'}, function (err, data) {
 			myBot.loadArticle(function(){
 		
 				/*	從getArticle()取得文章內容	*/
-				fs.writeFile('./movie_data/'+'movie'+articleList[arrIndex]+'.txt', iconv.encode( myBot.escapeANSI( myBot.getArticle() ),'big5' ), function (err) {
+				fs.writeFile('./Articles/'+'movie'+articleList[arrIndex]+'.txt', iconv.encode( myBot.escapeANSI( myBot.getArticle() ),'big5' ), function (err) {
 				
 					if (err) throw err;
 					console.log('movie'+articleList[arrIndex]+' 已經被儲存囉!');
