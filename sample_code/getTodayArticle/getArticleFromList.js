@@ -29,9 +29,9 @@ fs.readFile('targetArticleList.txt',{encoding:'utf-8'}, function (err, data) {
 		});
 	
 		/*	進入欲收集的電影版版中	*/
-		myBot.toBoard('movie',function(){
+		myBot.toBoard('gossiping',function(){
 		
-			console.log('已進入movie板，接著收集文章!');
+			console.log('已進入gossiping板，接著收集文章!');
 		
 		});
 	
@@ -52,10 +52,10 @@ fs.readFile('targetArticleList.txt',{encoding:'utf-8'}, function (err, data) {
 			myBot.loadArticle(function(){
 		
 				/*	從getArticle()取得文章內容	*/
-				fs.writeFile('./Articles/'+'movie'+articleList[arrIndex]+'.txt', iconv.encode( myBot.escapeANSI( myBot.getArticle() ),'big5' ), function (err) {
+				fs.writeFile('./Articles/'+'gossiping'+articleList[arrIndex]+'.txt', iconv.encode( myBot.escapeANSI( myBot.getArticle() ),'big5' ), function (err) {
 				
 					if (err) throw err;
-					console.log('movie'+articleList[arrIndex]+' 已經被儲存囉!');
+					console.log('gossiping'+articleList[arrIndex]+' 已經被儲存囉!');
 				
 					arrIndex++;
 				
