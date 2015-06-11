@@ -1,10 +1,9 @@
 <?php
 
-	shell_exec('dir');
+	
+	$output = system('node getTodayList.js', $retval);
+	
+	$output = system('node getArticleFromList.js', $retval);
 
-	shell_exec('node getTodayList.js');
-
-	shell_exec('node getArticleFromList.js');
-
-
+	
 ?>

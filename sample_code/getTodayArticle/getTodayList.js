@@ -27,7 +27,7 @@ fs.readFile('../../myID.txt',{encoding:'utf-8'}, function (err, data) {
 	var conn = myBot.login(id,ps, function(){ //請自行輸入帳號密碼
 		
 			/*	登入完後即停留在主功能表 */	
-			console.log('已進入主功能表');
+			console.log('The bot is in Main!');
 		
 	});
 	
@@ -38,7 +38,7 @@ fs.readFile('../../myID.txt',{encoding:'utf-8'}, function (err, data) {
 	/*	進入欲收集的電影版版中	*/
 	myBot.toBoard('movie',function(){
 		
-		console.log('已進入movie板，接著收集文章!');
+		console.log('The bot is in movie board, try to collect article index!');
 		
 		//console.log(myBot.escapeANSI(myBot.getScreen()));
 		var screenData = S(myBot.getScreen()).replaceAll('●','  ').s;	
@@ -63,7 +63,7 @@ fs.readFile('../../myID.txt',{encoding:'utf-8'}, function (err, data) {
 	});
 	
 	
-	for(var i=0;i<=9;i++){
+	for(var i=0;i<=10;i++){
 		
 		myBot.sendPageUp(function(){
 			
@@ -91,7 +91,7 @@ fs.readFile('../../myID.txt',{encoding:'utf-8'}, function (err, data) {
 					if (err) throw err;
 				});
 		
-			console.log("找尋List中.....");
+			console.log("finding List...");
 		
 		});	
 		
