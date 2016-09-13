@@ -78,7 +78,8 @@
 	  * connection to PTT sever
 	  * type object
 	  */
-	var g_conn ;
+	// var g_conn ;
+	var g_conn = net.createConnection(23, 'ptt.cc');
 
 	/**
 	  * buffer for screen data
@@ -146,9 +147,9 @@
 	 */
 	function login(id, ps, callback){
 
-		g_conn = net.createConnection(23, 'ptt.cc');
 		
-		g_conn.setTimeout(700);
+		
+		g_conn.setTimeout(1000);
 	
 		g_commandsObj.callbacks.push((callback ? callback : function(){}));	
 	
@@ -427,6 +428,8 @@
 	}
 	*/
 
+	
+	exports.g_conn = g_conn;
 
 	/*****
 		export public function
@@ -679,13 +682,18 @@
 	}
 
 	function loginDataHandler(newdataStr, id, ps){
-
+	
 		if (newdataStr.indexOf("140.112.172.11") != -1 && newdataStr.indexOf("批踢踢實業坊") != -1) {
 		}
 	
 		if (newdataStr.indexOf("您想刪除其他重複登入的連線嗎") != -1){
 			sendCommand( 'y\r' );	
 			console.log( '已刪除其他重複登入的連線' );
+		}
+	
+		if (newdataStr.indexOf("您要刪除以上錯誤嘗試的記錄嗎") != -1){
+			sendCommand( 'y\r' );	
+			console.log( '已刪除錯誤嘗試的記錄' );
 		}
 	
 		if (newdataStr.indexOf("登入中") != -1){
